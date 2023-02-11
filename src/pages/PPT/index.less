@@ -1,0 +1,52 @@
+@default-border-color: #e0e0e0;
+@active-color: #b51111fc;
+.wrap {
+  display: flex;
+  .leftContent {
+    width: 20%;
+    border-right: 1px solid @default-border-color;
+    height: calc(100vh - 40px);
+    overflow: auto;
+    li {
+      list-style: none;
+      position: relative;
+      &.active {
+        .pageItem {
+          border: 2px solid @active-color;
+        }
+        span {
+          color: @active-color;
+        }
+      }
+      .pageItem {
+        display: inline-block;
+        border: 1px solid @default-border-color;
+        margin: 10px 20px;
+        height: 200px;
+        width: 90%;
+      }
+      span {
+        position: absolute;
+        top: 10px;
+      }
+    }
+    .plusBtn {
+      position: fixed;
+      bottom: 0;
+      height: 40px;
+      border: 1px solid @default-border-color;
+      width: 20%;
+      text-align: center;
+      .plusIcon {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+  .rightContent {
+    border: 1px solid @default-border-color;
+    margin: 30px auto;
+    width: 70%;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+}
